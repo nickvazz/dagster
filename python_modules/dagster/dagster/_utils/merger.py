@@ -42,7 +42,7 @@ def deep_merge_dicts(
     dictionaries, the returned dictionary contains the value from from_dict.
     """
     onto_dict = copy.deepcopy(onto_dict if isinstance(onto_dict, dict) else dict(onto_dict))
-    return _deep_merge_dicts(onto_dict, from_dict)
+    return _deep_merge_dicts(onto_dict, from_dict)  # type: ignore # [mypy bug]
 
 
 def merge_dicts(*args: Mapping) -> Dict:
